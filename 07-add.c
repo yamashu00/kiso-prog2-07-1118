@@ -24,14 +24,16 @@
 //   ① 2行目が 14 にならない書き方と、14 になる書き方の違いを、ペアの人に説明する
 // ==================================================
 #include <stdio.h>
-#define ADD(a, b) 0   /* ここを書き換える */
+#define ADD(a, b) (a) + (b) /* ここを書き換える */
 
 int main(void)
 {
     int i1, i2;
 
-    printf("整数1=");  scanf("%d", &i1);
-    printf("整数2=");  scanf("%d", &i2);
+    printf("整数1=");
+    scanf("%d", &i1);
+    printf("整数2=");
+    scanf("%d", &i2);
 
     printf("%d + %d = %d\n", i1, i2, ADD(i1, i2));
     printf("%d + %d の2倍は%d です\n", i1, i2, ADD(i1, i2) * 2);

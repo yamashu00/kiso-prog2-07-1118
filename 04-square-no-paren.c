@@ -24,11 +24,11 @@
 //   ① #define の行をどう直せば 16 になる？ 03-square-macro.c と見比べて直し、手順2〜3で確かめる
 // ==================================================
 #include <stdio.h>
-#define SQUARE(a) (a * a)   /* カッコを外した */
+#define SQUARE(a) (a * a) /* カッコを外した */
 
 int main(void)
 {
-    int r = 3;
-    printf("2乗は%dです。\n", SQUARE(r + 1));   /* 1足した */
+    int r = 4;
+    printf("2乗は%dです。\n", SQUARE(r + 1)); /* 1足した */
     return 0;
 }
