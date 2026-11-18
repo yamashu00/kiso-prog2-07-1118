@@ -14,6 +14,7 @@
 //   2. ./03-square-macro を実行し、「2乗は9です。」と表示されることを確かめる
 //   3. gcc -E 03-square-macro.c -o 03-square-macro.i を実行する
 //   4. tail -n 6 03-square-macro.i を実行し、SQUARE(r) が ((r) * (r)) に置き換わっていることを確かめる
+//   ↑tailっていうのは、ファイルの末尾◯行を表示するコマンド(ここでは6行)
 //
 // 【確認できたらOK】
 //   ・手順2で「2乗は9です。」と表示された
@@ -28,6 +29,6 @@
 int main(void)
 {
     int r = 3;
-    printf("2乗は%dです。\n", SQUARE(r));
+    printf("2乗は%dです。\n", SQUARE(r+1));
     return 0;
 }
