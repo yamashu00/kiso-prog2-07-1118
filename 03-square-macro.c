@@ -20,7 +20,7 @@
 //   ・手順4で、SQUARE(r) が ((r) * (r)) になっていた
 //
 // 【やってみよう】
-//   ① SQUARE(r) を SQUARE(r + 1) に変えると、結果はいくつになる？ 予想してから手順1〜2を実行する
+//   ① SQUARE(r) を SQUARE(r + 1) に変えると、結果はいくつになる？ 予想してから手順1〜2を実行する 16
 // ==================================================
 #include <stdio.h>
 #define SQUARE(a) ((a) * (a))
@@ -28,6 +28,6 @@
 int main(void)
 {
     int r = 3;
-    printf("2乗は%dです。\n", SQUARE(r));
+    printf("2乗は%dです。\n", SQUARE(r+1));
     return 0;
 }
