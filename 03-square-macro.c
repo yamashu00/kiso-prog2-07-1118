@@ -23,7 +23,7 @@
 //   ① SQUARE(r) を SQUARE(r + 1) に変えると、結果はいくつになる？ 予想してから手順1〜2を実行する
 // ==================================================
 #include <stdio.h>
-#define SQUARE(a) ((a) * (a))
+#define SQUARE(r) を SQUARE(r + 1)
 
 int main(void)
 {
