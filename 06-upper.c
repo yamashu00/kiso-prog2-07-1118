@@ -22,13 +22,13 @@
 //   ① 大文字（例：B）を入力すると、どうなる？ 三項演算子を使って、小文字のときだけ変換するように直す
 // ==================================================
 #include <stdio.h>
-#define UPPER(c) (c)   /* ここを書き換える */
+#define UPPER(c) ((c) - 'a' + 'A')
 
 int main(void)
 {
     char c;
     printf("小文字を入力してください=");
     scanf("%c", &c);
-    printf("大文字に変換すると%c です\n", UPPER(c));
+    (c >= 'a' && c <= 'z') ? printf("大文字に変換すると%c です\n", UPPER(c)) : printf("入力された文字は小文字ではありません\n");
     return 0;
 }
