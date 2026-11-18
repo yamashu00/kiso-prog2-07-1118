@@ -29,6 +29,16 @@
 int main(void)
 {
     int r = 3;
-    printf("2乗は%dです。\n", SQUARE(r + 1));   /* 1足した */
+    printf("2乗は%dです。\n", SQUARE(r + 1));   // (a * a) = (r + 1 * r + 1)
+    return 0;
+}
+
+#include <stdio.h>
+#define SQUARE(a) ((a) * (a))
+
+int main(void)
+{
+    int r = 3;
+    printf("2乗は%dです。\n", SQUARE(r + 1));
     return 0;
 }

@@ -55,6 +55,6 @@
 int main(void)
 {
     int r = 2;
-    printf("円の面積は%fです。\n", r * r * PI);
+    printf("円の面積は%.2fです。\n", r * r * PI);
     return 0;
 }
