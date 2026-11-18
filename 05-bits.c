@@ -17,19 +17,19 @@
 //          tail -n 10 05-bits.i で BITS(byte) がどんな式に置き換わったか確かめる
 //
 // 【確認できたらOK】
-//   ・4 を入力して「4 バイトは32 ビットです」と表示された
+//   ・4 を入力して「4 バイトは32 ビットです」と表示された ⭕️
 //
 // 【やってみよう】
-//   ① printf の中の BITS(byte) を BITS(byte + 1) に変えて、4 を入力すると 40 になるか確かめる
+//   ① printf の中の BITS(byte) を BITS(byte + 1) に変えて、4 を入力すると 40 になるか確かめる ⭕️
 // ==================================================
 #include <stdio.h>
-#define BITS(b) 0   /* ここを書き換える */
+#define BITS(b) ((b) * 8)   /* ここを書き換える */
 
 int main(void)
 {
     int byte;
     printf("整数=");
     scanf("%d", &byte);
-    printf("%d バイトは%d ビットです\n", byte, BITS(byte));
+    printf("%d バイトは%d ビットです\n", byte, BITS(byte + 1));
     return 0;
 }

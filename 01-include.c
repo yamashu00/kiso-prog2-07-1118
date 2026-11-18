@@ -28,16 +28,20 @@
 //        → このファイルに hello の中身を書いていないのに動くのは、sample.txt の中身が貼り付けられたから
 //
 // 【確認できたらOK】
-//   ・手順4で、#include を書いた場所に sample.txt の中身が入っていた
-//   ・手順6で、「Hello」と表示された
+//   ・手順4で、#include を書いた場所に sample.txt の中身が入っていた ⭕️
+//   ・手順6で、「Hello」と表示された ⭕️
 //
 // 【やってみよう】
 //   ① #include "sample.txt" の行を消して、手順5をもう一度実行する。どんなエラーが出る？ なぜ？
-//   ② wc -l 01-include.i を実行して、01-include.i の行数を数える。
+/* 01-include.c:44:5: error: call to undeclared function 'hello'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   44 |     hello();
+      |     ^ 
+    理由：#include "sample.txt" を削除すると、sample.txt に記述された hello() 関数が読み込まれなくなる。その結果、コンパイラが hello() 関数の宣言を認識できず、エラーが発生した。*/
+//   ② wc -l 01-include.i を実行して、01-include.i の行数を数える。：580行
 //      このファイルは十数行なのに、なぜ数百行もある？（ヒント：#include <stdio.h> も同じように貼り付けられる）
 // ==================================================
 #include <stdio.h>
-#include "sample.txt"
+//#include "sample.txt"
 
 int main(void)
 {
