@@ -23,13 +23,13 @@
 //   ① printf の中の BITS(byte) を BITS(byte + 1) に変えて、4 を入力すると 40 になるか確かめる
 // ==================================================
 #include <stdio.h>
-#define BITS(b) 0   /* ここを書き換える */
+#define BITS(b) ((b) * 8)
 
 int main(void)
 {
     int byte;
     printf("整数=");
     scanf("%d", &byte);
-    printf("%d バイトは%d ビットです\n", byte, BITS(byte));
+    printf("%d バイトは%d ビットです\n", byte, BITS(byte + 1));
     return 0;
 }
