@@ -21,9 +21,13 @@
 //
 // 【やってみよう】
 //   ① printf の中の BITS(byte) を BITS(byte + 1) に変えて、4 を入力すると 40 になるか確かめる
+//
+// 【回答・確認結果】
+//   ① 4 を入力して BITS(byte) は32、BITS(byte + 1) は40になることを確認した。
+//   後者は ((byte + 1) * 8) に展開され、足し算を先に計算できる。
 // ==================================================
 #include <stdio.h>
-#define BITS(b) 0   /* ここを書き換える */
+#define BITS(b) ((b) * 8)
 
 int main(void)
 {
@@ -31,5 +35,6 @@ int main(void)
     printf("整数=");
     scanf("%d", &byte);
     printf("%d バイトは%d ビットです\n", byte, BITS(byte));
+    printf("%d バイトは%d ビットです\n", byte + 1, BITS(byte + 1));
     return 0;
 }

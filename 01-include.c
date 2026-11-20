@@ -35,12 +35,19 @@
 //   ① #include "sample.txt" の行を消して、手順5をもう一度実行する。どんなエラーが出る？ なぜ？
 //   ② wc -l 01-include.i を実行して、01-include.i の行数を数える。
 //      このファイルは十数行なのに、なぜ数百行もある？（ヒント：#include <stdio.h> も同じように貼り付けられる）
+
+// 【回答・確認結果】
+//   ① sample.txt の #include を削ると、gcc は「implicit declaration of function 'hello'」を出した。
+//   hello() を呼ぶ箇所で、その関数の宣言も定義も見えなくなるため。
+//   ② wc -l の結果は639行だった。stdio.h と、そこから読み込むヘッダーの内容が展開され、
+//   プリプロセッサが追加する行番号の目印も入るため。
+
 // ==================================================
 #include <stdio.h>
 #include "sample.txt"
 
 int main(void)
 {
-    hello();
+    hello();  // sample.txt から取り込んだ関数を呼び出す。
     return 0;
 }
